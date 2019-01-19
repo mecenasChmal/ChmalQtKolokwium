@@ -1,12 +1,14 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "dodawanie.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow){
     ui->setupUi(this);
+    setModel();
 
+}
+void MainWindow::setModel(){
     csvModel=new QStandardItemModel(this); //model do wczytania danych
     proxyModel=new QSortFilterProxyModel(this); //model do sortowania tabeli
     proxyModel->setSourceModel(csvModel);
@@ -23,8 +25,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
     //wczytanie tablicy
     on_wyswietlWszystko_clicked();
-}
 
+}
 MainWindow::~MainWindow(){
     delete ui;
     delete csvModel;
@@ -72,4 +74,10 @@ void MainWindow::on_actionDodaj_triggered(){
     Dodawanie dodawanie;
     dodawanie.setModal(true);
     dodawanie.exec();
+}
+
+void MainWindow::on_actionZamow_triggered(){
+    Zamowienia zamowienia;
+    zamowienia.setModal(true);
+    zamowienia.exec();
 }

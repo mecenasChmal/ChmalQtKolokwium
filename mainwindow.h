@@ -8,6 +8,9 @@
 #include <QTextStream>
 #include <QDebug>
 #include <QSortFilterProxyModel>
+#include "dodawanie.h"
+#include "zamowienia.h"
+
 
 namespace Ui {
 class MainWindow;
@@ -19,7 +22,10 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
+    void setModel();
     ~MainWindow();
+
+
 
 private slots:
     void on_szukajButton_clicked();
@@ -27,9 +33,11 @@ private slots:
 
     void on_actionDodaj_triggered();
 
+    void on_actionZamow_triggered();
+
 private:
-    Ui::MainWindow *ui;
     QStandardItemModel *csvModel; //model- obsluga danych
+    Ui::MainWindow *ui;
     QButtonGroup *radioGroup;
     QSortFilterProxyModel *proxyModel;
 };
