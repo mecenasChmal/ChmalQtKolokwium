@@ -23,8 +23,9 @@ public:
 
 private slots:
     void on_szukajButton_clicked();
-
     void on_wyswietlWszystko_clicked();
+
+    void on_actionDodaj_triggered();
 
 private:
     Ui::MainWindow *ui;

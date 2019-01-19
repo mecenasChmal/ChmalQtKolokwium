@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>778</width>
+    <width>823</width>
     <height>491</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Lista Książek</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QFrame" name="frameSzukaj">
@@ -147,7 +147,7 @@
      <rect>
       <x>230</x>
       <y>20</y>
-      <width>521</width>
+      <width>561</width>
       <height>361</height>
      </rect>
     </property>
@@ -162,7 +162,7 @@
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>521</width>
+       <width>561</width>
        <height>361</height>
       </rect>
      </property>
@@ -187,16 +187,18 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>778</width>
+     <width>823</width>
      <height>21</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuKsiazki">
+   <widget class="QMenu" name="menuKsi_ki">
     <property name="title">
      <string>Książki</string>
     </property>
+    <addaction name="actionDodaj"/>
+    <addaction name="actionZamow"/>
    </widget>
-   <addaction name="menuKsiazki"/>
+   <addaction name="menuKsi_ki"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -207,6 +209,16 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionDodaj">
+   <property name="text">
+    <string>Dodaj pozycję</string>
+   </property>
+  </action>
+  <action name="actionZamow">
+   <property name="text">
+    <string>Zamówienia</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

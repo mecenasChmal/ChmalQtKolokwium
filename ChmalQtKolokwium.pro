@@ -26,13 +26,16 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    dodawanie.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    dodawanie.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    dodawanie.ui
 QMAKE_CXXFLAGS += -std=c++0x
 
 # Default rules for deployment.

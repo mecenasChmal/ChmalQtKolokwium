@@ -1,18 +1,17 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "dodawanie.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow){
     ui->setupUi(this);
 
-
     csvModel=new QStandardItemModel(this); //model do wczytania danych
     proxyModel=new QSortFilterProxyModel(this); //model do sortowania tabeli
     proxyModel->setSourceModel(csvModel);
     ui->ksiazkiTabela->setModel(proxyModel); //ustawienie modelu w tabeli
     ui->ksiazkiTabela->setSortingEnabled(true);
-
     //pogrupowanie przyciskow i przypisanie wartosci
     radioGroup = new QButtonGroup(this);
     radioGroup->setExclusive(true);
@@ -46,7 +45,7 @@ void MainWindow::on_wyswietlWszystko_clicked(){
     QStringList header;
     header<<"Tytul"<<"Autor"<<"Rok wydania"<<"Gatunek";
     csvModel->setHorizontalHeaderLabels(header);
-
+    ui->ksiazkiTabela->setColumnWidth(0,200);
      //wczytujemy plik data.csv
     QFile file("data.csv");
     if (!file.open(QFile::ReadOnly | QFile::Text) ){
@@ -67,4 +66,10 @@ void MainWindow::on_wyswietlWszystko_clicked(){
         }
         file.close();
        }
+}
+
+void MainWindow::on_actionDodaj_triggered(){
+    Dodawanie dodawanie;
+    dodawanie.setModal(true);
+    dodawanie.exec();
 }
