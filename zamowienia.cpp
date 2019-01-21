@@ -30,7 +30,8 @@ void Zamowienia::setModel(){
             for (QString item : line.split(";")){
                 list.append(new QStandardItem(item));
             }
-            csvModel->insertRow(csvModel->rowCount(), list);
+            //csvModel->insertRow(csvModel->rowCount(), list);
+            csvModel->setItem(csvModel->rowCount(),list[0]);
         }
         file.close();
        }
